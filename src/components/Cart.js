@@ -1,11 +1,11 @@
 // Cart.js
 import React from 'react';
-import {Navbar} from './Navbar';
+import {NavScrollExample} from './NavScrollExample';
 
 export const Cart = () => {
   return (
     <div>
-      <Navbar />
+      <NavScrollExample />
       <h1>Cart</h1>
       {/* Add your cart items here */}
     </div>

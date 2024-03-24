@@ -1,25 +1,35 @@
-import React from 'react';import Dropdown from 'react-bootstrap/Dropdown';
-
+import React from "react";
+import { Button,Dropdown, DropdownButton, ButtonGroup, ListGroup } from "react-bootstrap";
 
 export const Sidebar = () => {
   return (
-    <div>
+    <div >
       Catagories
-      <ul className='list-unstyled ps-0'>
-        <li className='mb-1'>
-          <button className='btn btn-toggle align-items-center rounded collapsed' data-bs-toggle='collapse'>
-                Catagorie One
-          </button>
-          <div className='collapse show' id='home-collapse'>
-            <ul className='btn-toggle-nav list-unstyled fw-normal pb-1 small' >
-              <li>1</li>
-              <li>2</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+      <ListGroup as={"li"}>
+      <ListGroup.Item as="li" disabled>
+          Childrens Books
+          </ListGroup.Item>
+          
+        <ListGroup.Item as="li" disabled>
+          Laptop
+          </ListGroup.Item>
+          
+         
+        <ListGroup.Item as="li" disabled>
+          KeyBoard
+          </ListGroup.Item >
+          
+         
+        <ListGroup.Item as="li" disabled>
+          Monitor
+          </ListGroup.Item >
+          
+       
+        <ListGroup.Item as="li" disabled>
+          Mouse
+          </ListGroup.Item >
+          
+      </ListGroup>
     </div>
   );
 };
-
-

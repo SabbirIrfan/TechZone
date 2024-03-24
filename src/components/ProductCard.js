@@ -1,12 +1,12 @@
 import Button from 'react-bootstrap/Button';
-import { Card, Container, Col ,CardGroup} from 'react-bootstrap';
+import { Card, Image} from 'react-bootstrap';
 
 export const ProductCard = ({ product }) => {
   return (
     
     
-      <Card className='col-3'>
-        <Card.Img variant="top" src={product.img} />
+      <Card className='col-3' style={{ marginTop:"1.5rem", }}>
+        <Image variant="top"  style={{height:"60%"}}thumbnail fluid	 src={product.img} />
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
           <Card.Text>
@@ -14,11 +14,12 @@ export const ProductCard = ({ product }) => {
             bulk of the card's content.
           </Card.Text>
           <Card.Text className='mt-auto'>{product.author}</Card.Text>
+          <Card.Text className='mt-auto'>{product.catagory}</Card.Text>
           
         </Card.Body>
         <Card.Footer>
         <Card.Text>Price: ${product.price}</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Add To Cart</Button>
         </Card.Footer>
       </Card>
   
