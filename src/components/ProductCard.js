@@ -5,7 +5,7 @@ export const ProductCard = ({ product,handleAddCart }) => {
  
 
   return (
-    <Card className='col-lg-3 my-card col-md-5 col-10' style={{ marginTop: "1.5rem" }}>
+    <Card className='col-lg-3 my-card col-md-5 col-10' style={{ }}>
       <Card.Img  variant="top" style={{ height: "13rem" }} thumbnail fluid src={product.img} />
       <Card.Body style={{}}>
         <Card.Title>{product.title}</Card.Title>

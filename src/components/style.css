@@ -29,3 +29,18 @@
     padding-top: 1rem;
   }
   
+  .my-sidebar{
+      position: fixed;
+      padding-top: 4rem;
+      z-index: 1000;
+      width: 16rem
+
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .my-sidebar {
+      width: 10rem; 
+    }
+      
+  }

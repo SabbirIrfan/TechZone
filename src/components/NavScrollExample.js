@@ -19,9 +19,13 @@ export const NavScrollExample = ({ searchProducts, cartSize, cartItem }) => {
     navigate(`/cart` ,  { state: { items : cartItem , searchProducts: searchProducts, cartSize:cartSize} });
   }
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary" style={{  position: "fixed",
+
+      padding: "20px",    
+      zIndex: "1000",
+      width:"100%"}}>
       <Container fluid>
-        <Navbar.Brand href="#">একের ভিতর সব</Navbar.Brand>
+        <Navbar.Brand  href="/">একের ভিতর সব</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
