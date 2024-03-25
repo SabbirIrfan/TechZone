@@ -87,7 +87,7 @@ const Home = () => {
       <div className='row'>
         <div className='col-2'>  <Sidebar filterViewProducts={filterViewProducts} /></div>
         <div className="col-10">
-          <div className='row ms-5 gap-5'>
+          <div className='row  gap-5'>
             {viewProducts.map(product => (
               <ProductCard key={product.id} handleAddCart={handleAddCart} product={product} setCartItem={setCartItem}  cartItem={cartItem} setCartSize={setCartSize}/>
             ))}

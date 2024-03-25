@@ -9,8 +9,8 @@ export const Sidebar = ({ filterViewProducts }) => {
   };
   return (
     <div >
-      Catagories
-      <ListGroup >
+      
+      <ListGroup className="mt-4" >
       <ListGroup.Item
           onClick={() => handleFilterStatus("all")}
             >

@@ -1,4 +1,57 @@
 export const Data = [
+  {
+    id: 11,
+    title: "Willy the Silly Panda",
+    desc: "books",
+    price: 120,
+    img: "https://cdn.stocksnap.io/img-thumbs/960w/chalet-wood_7PBFL1ERJT.jpg",
+    amount:1,
+    catagory: "laptop"
+  },
+  {
+    id: 12,
+    title: "Grandma's Bag of Stories",
+    desc: "books",
+    price: 157,
+    img: "https://m.media-amazon.com/images/I/71XQ+eLtgTL._AC_SX522_.jpg",
+    amount:1,
+    catagory: "keyboard"
+  },
+  {
+    id: 13,
+    title: "AulaF75",
+    desc: "books",
+    price: 120,
+    img: "https://m.media-amazon.com/images/I/81jv44QdNwL._AC_UY327_FMwebp_QL65_.jpg",
+    amount:1,
+    catagory: "mouse"
+  },
+  {
+    id: 14,
+    title: "Aula F75",
+    desc: "books",
+    price: 157,
+    img: "https://m.media-amazon.com/images/I/81jv44QdNwL._AC_UY327_FMwebp_QL65_.jpg",
+    amount:1,
+    catagory: "monitor"
+  },{
+    id: 15,
+    title: "Willy the Silly Panda",
+    desc: "books",
+    price: 120,
+    img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
+    amount:1,
+    catagory: "laptop"
+  },
+  {
+    id: 16,
+    title: "Grandma's Bag of Stories",
+    desc: "books",
+    price: 157,
+    img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
+    amount:1,
+    catagory: "laptop"
+  },
     {
       id: 1,
       title: "My First book of Pencil Control",
@@ -90,58 +143,6 @@ export const Data = [
       amount:1,
       catagory: "book"
     },
-    {
-      id: 11,
-      title: "Willy the Silly Panda",
-      desc: "books",
-      price: 120,
-      img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
-      amount:1,
-      catagory: "laptop"
-    },
-    {
-      id: 12,
-      title: "Grandma's Bag of Stories",
-      desc: "books",
-      price: 157,
-      img: "https://m.media-amazon.com/images/I/71XQ+eLtgTL._AC_SX522_.jpg",
-      amount:1,
-      catagory: "keyboard"
-    },
-    {
-      id: 13,
-      title: "AulaF75",
-      desc: "books",
-      price: 120,
-      img: "https://m.media-amazon.com/images/I/71-ocPGQIJL._AC_UY327_FMwebp_QL65_.jpg",
-      amount:1,
-      catagory: "mouse"
-    },
-    {
-      id: 14,
-      title: "Grandma's Bag of Stories",
-      desc: "books",
-      price: 157,
-      img: "https://m.media-amazon.com/images/I/81jv44QdNwL._AC_UY327_FMwebp_QL65_.jpg",
-      amount:1,
-      catagory: "monitor"
-    },{
-      id: 15,
-      title: "Willy the Silly Panda",
-      desc: "books",
-      price: 120,
-      img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
-      amount:1,
-      catagory: "laptop"
-    },
-    {
-      id: 16,
-      title: "Grandma's Bag of Stories",
-      desc: "books",
-      price: 157,
-      img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
-      amount:1,
-      catagory: "laptop"
-    },
+    
 ];
 

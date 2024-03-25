@@ -16,7 +16,7 @@ export const NavScrollExample = ({ searchProducts, cartSize, cartItem }) => {
   };
 
   const handleCartNavigation = () => {
-    navigate(`/cart` ,  { state: { items : cartItem } });
+    navigate(`/cart` ,  { state: { items : cartItem , searchProducts: searchProducts, cartSize:cartSize} });
   }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">

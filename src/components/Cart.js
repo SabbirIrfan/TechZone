@@ -40,9 +40,10 @@ export const Cart = () => {
     })
 
     return ( 
-        <Container className='row gap-3'>
+        
+        <Container fluid className='row ms-5 mr-5 mt-4 gap-3 '>
           {cartItem?.map((item) => (
-            <Card key={item.id} className="mb-3 col-4">
+            <Card key={item.id} className="mb-3 col-3">
               <Card.Body>
               <Card.Title>{item.title}</Card.Title>
                 <div className="d-flex align-items-end">
