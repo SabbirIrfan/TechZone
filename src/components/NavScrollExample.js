@@ -4,8 +4,20 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FaCartPlus } from "react-icons/fa";
+import { Cart } from './Cart';
+import './style.css'
+import { useNavigate } from "react-router-dom";
 
-export const NavScrollExample = ()=> {
+export const NavScrollExample = ({ searchProducts, cartSize, cartItem }) => {
+  const navigate = useNavigate();
+  const handleSearch = (e) => {
+    searchProducts(e.target.value);
+  };
+
+  const handleCartNavigation = () => {
+    navigate(`/cart` ,  { state: { items : cartItem } });
+  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -37,10 +49,20 @@ export const NavScrollExample = ()=> {
             <Form.Control
               type="search"
               placeholder="Search"
+              onChange={handleSearch}
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" onClick={handleCartNavigation}>
+              <span>
+                <div className="cart-icon-container">
+                  {cartSize > 0 && <span className="badge">{cartSize}</span>}
+
+                  <FaCartPlus />
+                </div>
+              </span>
+
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

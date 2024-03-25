@@ -1,13 +1,13 @@
-export const list = [
+export const Data = [
     {
       id: 1,
-      title: "My First Book of Pencil Control",
+      title: "My First book of Pencil Control",
       desc: "books",
       price: 89,
       img: "https://m.media-amazon.com/images/I/810OOg88LoL._AC_UY327_FMwebp_QL65_.jpg",
       
-      amount: 100,
-      catagory: "Book"
+      amount: 1,
+      catagory: "book"
     },
     {
       id: 2,
@@ -15,8 +15,8 @@ export const list = [
       desc: "books",
       price: 98,
       img: "https://m.media-amazon.com/images/I/71rmxx8P2qL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 10,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 3,
@@ -24,17 +24,17 @@ export const list = [
       desc: "books",
       price: 143,
       img: "https://m.media-amazon.com/images/I/81Gbz0XnW7L._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 4,
-      title: "My First Book of Pencil Control",
+      title: "My First book of Pencil Control",
       desc: "books",
       price: 57,
       img: "https://m.media-amazon.com/images/I/81Gbz0XnW7L._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 5,
@@ -42,8 +42,8 @@ export const list = [
       desc: "books",
       price: 149,
       img: "https://m.media-amazon.com/images/I/71O-FI7QApL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 6,
@@ -51,8 +51,8 @@ export const list = [
       desc: "books",
       price: 135,
       img: "https://m.media-amazon.com/images/I/9173YBkMIsL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 7,
@@ -60,8 +60,8 @@ export const list = [
       desc: "books",
       price: 693,
       img: "https://m.media-amazon.com/images/I/913sv4sex3L._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 8,
@@ -69,26 +69,26 @@ export const list = [
       desc: "books",
       price: 289,
       img: "https://m.media-amazon.com/images/I/71xMttNhr7L._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 9,
-      title: "Blossom Moral Story Book for Kids ",
+      title: "Blossom Moral Story book for Kids ",
       desc: "books",
       price: 80,
       img: "https://m.media-amazon.com/images/I/7122h3jWvEL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 10,
-      title: "Brain Activity Book for Kids",
+      title: "Brain Activity book for Kids",
       desc: "books",
       price: 86,
       img: "https://m.media-amazon.com/images/I/7175YpTSa7L._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
-      catagory: "Book"
+      amount:1,
+      catagory: "book"
     },
     {
       id: 11,
@@ -96,7 +96,7 @@ export const list = [
       desc: "books",
       price: 120,
       img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
-      amount: 20,
+      amount:1,
       catagory: "laptop"
     },
     {
@@ -105,7 +105,7 @@ export const list = [
       desc: "books",
       price: 157,
       img: "https://m.media-amazon.com/images/I/71XQ+eLtgTL._AC_SX522_.jpg",
-      amount: 20,
+      amount:1,
       catagory: "keyboard"
     },
     {
@@ -114,7 +114,7 @@ export const list = [
       desc: "books",
       price: 120,
       img: "https://m.media-amazon.com/images/I/71-ocPGQIJL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
+      amount:1,
       catagory: "mouse"
     },
     {
@@ -123,7 +123,7 @@ export const list = [
       desc: "books",
       price: 157,
       img: "https://m.media-amazon.com/images/I/81jv44QdNwL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 20,
+      amount:1,
       catagory: "monitor"
     },{
       id: 15,
@@ -131,7 +131,7 @@ export const list = [
       desc: "books",
       price: 120,
       img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
-      amount: 20,
+      amount:1,
       catagory: "laptop"
     },
     {
@@ -140,7 +140,7 @@ export const list = [
       desc: "books",
       price: 157,
       img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
-      amount: 20,
+      amount:1,
       catagory: "laptop"
     },
 ];
