@@ -15,11 +15,19 @@
   }
 
   .my-card:hover{
-    transform: scale(1.02);
+    transform: scale(1.01);
+    transition: transform 0.9s ease-in;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .my-card-image:hover{
+    transform: scale(1.03);
     transition: transform 0.3s ease-in;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    
-
+  }
+  .my-carousel-image:hover{
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in;
+    box-shadow: 0.1px 0.1px 0.1px rgba(0, 0, 0, 0.1);
   }
 
   .my-card{
@@ -33,14 +41,24 @@
       position: fixed;
       padding-top: 4rem;
       z-index: 1000;
-      width: 16rem
-
+      width: calc(17vw - 2rem); /* Adjust the subtracted value to your preference */    
   }
 
 
   @media screen and (max-width: 768px) {
     .my-sidebar {
-      width: 10rem; 
-    }
-      
+      width: calc(100vw - 2rem); /* Adjust the subtracted value to your preference */    }
+  }
+
+  .container {
+    width: 80%; 
+    height: 30rem;
+    overflow: hidden;
+  }
+  
+  .container img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+    /* display: block;  */
   }

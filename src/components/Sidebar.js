@@ -1,29 +1,33 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Dropdown,
-  DropdownButton,
-  ButtonGroup,
-  ListGroup,
-} from "react-bootstrap";
+import { Button, ListGroup , Offcanvas} from "react-bootstrap";
 
 export const Sidebar = ({ filterViewProducts }) => {
   const [filterState, setFilterState] = useState("All");
-  const handleFilterStatus = (catagory) => {
-    filterViewProducts(catagory);
-    setFilterState(catagory);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleFilterStatus = (category) => {
+    filterViewProducts(category);
+    setFilterState(category);
   };
 
-  function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('collapsed');
-  }
+
   return (
     <div>
-      <ListGroup
-        className="my-sidebar mt-4"
-       
-      >
+ 
+
+      <Button  variant="secondery" class="navbar-toggle" onClick={handleShow}>
+        Catagory
+      </Button> 
+
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Catagory</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+        <ListGroup className="my-sidebar mt-5
+        ">
         <ListGroup.Item
           className="mb-2"
           style={{ cursor: "pointer" }}
@@ -34,13 +38,10 @@ export const Sidebar = ({ filterViewProducts }) => {
         <ListGroup.Item
           className="mb-2"
           style={{ cursor: "pointer" }}
-          onClick={() => {
-            handleFilterStatus("book");
-          }}
+          onClick={() => handleFilterStatus("book")}
         >
-          Childrens Books
+          Children's Books
         </ListGroup.Item>
-
         <ListGroup.Item
           className="mb-2"
           style={{ cursor: "pointer" }}
@@ -48,15 +49,13 @@ export const Sidebar = ({ filterViewProducts }) => {
         >
           Laptop
         </ListGroup.Item>
-
         <ListGroup.Item
           className="mb-2"
           style={{ cursor: "pointer" }}
           onClick={() => handleFilterStatus("keyboard")}
         >
-          KeyBoard
+          Keyboard
         </ListGroup.Item>
-
         <ListGroup.Item
           className="mb-2"
           style={{ cursor: "pointer" }}
@@ -64,7 +63,6 @@ export const Sidebar = ({ filterViewProducts }) => {
         >
           Monitor
         </ListGroup.Item>
-
         <ListGroup.Item
           className="mb-2"
           style={{ cursor: "pointer" }}
@@ -73,6 +71,13 @@ export const Sidebar = ({ filterViewProducts }) => {
           Mouse
         </ListGroup.Item>
       </ListGroup>
+        </Offcanvas.Body>
+      </Offcanvas>
+     
     </div>
   );
 };
+
+export default Sidebar;
+
+

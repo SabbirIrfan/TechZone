@@ -1,10 +1,13 @@
 // Home.js
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { NavScrollExample } from './NavScrollExample'
 import { Sidebar } from './Sidebar';
 // import {PersistentDrawerLeft} from './SidebarMat'
 import { ProductCard } from './ProductCard';
 import { Data } from '../data'
+import { Toast } from 'react-bootstrap';
+import { ControlledCarousel } from './Carousels';
 const Home = () => {
   // Dummy product data for demonstration
   const [products, setData] = useState(Data);
@@ -69,25 +72,33 @@ const Home = () => {
     } else setViewProducts(searchedNotes);
   };
 
+
   const handleAddCart = (product) => {
     // Copy the existing cart items array and append the new product to it
     console.log(cartItem)
+    const exist =  cartItem.filter((item)=> item.id === product.id)
+    if( exist.length > 0 ) {
+      console.log("item already added to cart")
+      return;
+    }
     setCartItem([...cartItem, product]);
     setCartSize(cartItem.length+1)
-    setTimeout(()=>{
-      console.log(cartItem)
-
-    },1000);
+    
 
   }
 
   return (
     <React.Fragment>
-      <NavScrollExample searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem}/>
+      <NavScrollExample searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} filterViewProducts={filterViewProducts}/>
       <div className='row'>
-        <div className='col-2' >  <Sidebar filterViewProducts={filterViewProducts} /></div>
-        <div className="col-10">
-          <div className='row  gap-5' style={{marginTop:"5.8rem"}}>
+       
+        {/* <div className='col-2 pt-5 mt-5' >  <Sidebar filterViewProducts={filterViewProducts} /></div> */}
+        <div className="col-12">
+          <div className='col-12' style={{height:"25rem"}}> 
+            <ControlledCarousel />
+          </div>
+          
+          <div className='row  gap-5' style={{marginTop:"5.8rem", marginLeft:"5rem"}}>
             {viewProducts.map(product => (
               <ProductCard key={product.id} handleAddCart={handleAddCart} product={product} setCartItem={setCartItem}  cartItem={cartItem} setCartSize={setCartSize}/>
             ))}
@@ -95,6 +106,7 @@ const Home = () => {
 
         </div>
       </div>
+      
     </React.Fragment>
   );
 };
