@@ -10,7 +10,7 @@ export const ControlledCarousel = () => {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel fluid activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <CarouselImage imageNo={1} text="First slide" />
        
@@ -23,10 +23,7 @@ export const ControlledCarousel = () => {
         <CarouselImage imageNo={3} text="Third slide" />
         
       </Carousel.Item>
-      <Carousel.Item>
-        <CarouselImage imageNo={4} text="Third slide" />
-        
-      </Carousel.Item>
+   
     </Carousel>
   );
 }

@@ -21,7 +21,7 @@ export const Sidebar = ({ filterViewProducts }) => {
         Catagory
       </Button> 
 
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={show} onHide={handleClose} >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Catagory</Offcanvas.Title>
         </Offcanvas.Header>

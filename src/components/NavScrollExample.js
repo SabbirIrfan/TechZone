@@ -1,15 +1,15 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { FaCartPlus } from "react-icons/fa";
+import React, {useState} from 'react';
 import './style.css'
 import { useNavigate } from "react-router-dom";
 import { Sidebar } from './Sidebar';
+import {Cartbar} from './Cartbar';
+export const NavScrollExample = ({ searchProducts, cartSize, cartItem ,filterViewProducts, setCartItem,setCartSize}) => {
+  const [price, setPrice] = useState(0);
 
-export const NavScrollExample = ({ searchProducts, cartSize, cartItem ,filterViewProducts}) => {
   const navigate = useNavigate();
   const handleSearch = (e) => {
     searchProducts(e.target.value);
@@ -46,20 +46,24 @@ export const NavScrollExample = ({ searchProducts, cartSize, cartItem ,filterVie
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success" onClick={handleCartNavigation}>
+            {/* <Button variant="outline-success" onClick={handleCartNavigation}>
               <span>
                 <div className="cart-icon-container">
                   {cartSize > 0 && <span className="badge">{cartSize}</span>}
 
                   <FaCartPlus />
+                  
                 </div>
               </span>
 
-            </Button>
+            </Button> */}
+
+            <Cartbar cartSize={cartSize} handleCartNavigation={handleCartNavigation} cartItem={cartItem} setPrice = {setPrice} setCartItem={setCartItem} setCartSize={setCartSize}  />
           </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
+
 

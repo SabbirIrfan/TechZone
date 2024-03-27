@@ -89,7 +89,7 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <NavScrollExample searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} filterViewProducts={filterViewProducts}/>
+      <NavScrollExample searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} setCartSize={setCartSize}  filterViewProducts={filterViewProducts} setCartItem={setCartItem}/>
       <div className='row'>
        
         {/* <div className='col-2 pt-5 mt-5' >  <Sidebar filterViewProducts={filterViewProducts} /></div> */}
@@ -100,7 +100,7 @@ const Home = () => {
           
           <div className='row  gap-5' style={{marginTop:"5.8rem", marginLeft:"5rem"}}>
             {viewProducts.map(product => (
-              <ProductCard key={product.id} handleAddCart={handleAddCart} product={product} setCartItem={setCartItem}  cartItem={cartItem} setCartSize={setCartSize}/>
+              <ProductCard key={product.id} handleAddCart={handleAddCart} product={product} setCartItem={setCartItem}  cartItem={cartItem} setCartSize={setCartSize} />
             ))}
           </div>
 
