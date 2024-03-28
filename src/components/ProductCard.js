@@ -7,12 +7,11 @@ export const ProductCard = ({ product,handleAddCart }) => {
   return (
     <Card className='col-lg-2  my-card col-md-5 col-10' style={{ }}>
       <Card.Img  className='my-card-image' variant="top" style={{ height: "13rem" }} thumbnail fluid src={product.img} />
-      <Card.Body style={{}}>
+      <Card.Body style={{maxHeight:"10rem"}}>
         <Card.Title>{product.title}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        {/* <Card.Text style={{overflowY: "auto" , maxHeight:"4rem"}}>
+          {product.desc}
+        </Card.Text> */}
         <Card.Text className='mt-auto'>{product.author}</Card.Text>
       </Card.Body>
       <Card.Footer>
