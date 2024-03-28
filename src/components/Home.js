@@ -1,5 +1,5 @@
 // Home.js
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { NavScrollExample } from './NavScrollExample'
 import { Sidebar } from './Sidebar';
@@ -20,9 +20,15 @@ const Home = () => {
   const cartSize = useCartSize();
   const setCartItem = useSetCartItem();
   const setCartSize = useSetCartSize();
+  useEffect(() => {
+    if(!localStorage.getItem("cart")) localStorage.setItem("cart",JSON.stringify([]));
+    let x = localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")) : [];
+    
+    setCartItem(x)
+    setCartSize(x.length)
+  }, []);
 
-
-   const filterViewProducts = (catagory) => {
+  const filterViewProducts = (catagory) => {
     if (catagory === "book") {
       setViewProducts(
         products.filter(
@@ -67,9 +73,9 @@ const Home = () => {
     console.log(searchWith + searchWith.length);
     let searchedNotes = products.filter(
       (product) =>
-      product.title.toLowerCase().includes(searchWith.toLowerCase()) ||
-      product.desc.toLowerCase().includes(searchWith.toLowerCase()) ||
-      product.catagory.toLowerCase().includes(searchWith.toLowerCase())
+        product.title.toLowerCase().includes(searchWith.toLowerCase()) ||
+        product.desc.toLowerCase().includes(searchWith.toLowerCase()) ||
+        product.catagory.toLowerCase().includes(searchWith.toLowerCase())
 
     );
 
@@ -83,37 +89,39 @@ const Home = () => {
   const handleAddCart = (product) => {
     // Copy the existing cart items array and append the new product to it
     console.log(cartItem)
-    const exist =  cartItem.filter((item)=> item.id === product.id)
-    if( exist.length > 0 ) {
+
+    const exist = cartItem.filter((item) => item.id === product.id)
+    if (exist.length > 0) {
       console.log("item already added to cart")
       return;
     }
     setCartItem([...cartItem, product]);
-    setCartSize(cartItem.length+1)
-    
+    localStorage.setItem("cart", JSON.stringify([...cartItem, product]))
+    setCartSize(cartItem.length + 1)
+
 
   }
 
   return (
     <React.Fragment>
-      <NavScrollExample searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} setCartSize={setCartSize}  filterViewProducts={filterViewProducts} setCartItem={setCartItem}/>
+      <NavScrollExample searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} setCartSize={setCartSize} filterViewProducts={filterViewProducts} setCartItem={setCartItem} />
       <div className='row'>
-       
+
         {/* <div className='col-2 pt-5 mt-5' >  <Sidebar filterViewProducts={filterViewProducts} /></div> */}
         <div className="col-12">
-          <div className='col-12' style={{height:"25rem"}}> 
+          <div className='col-12' style={{ height: "25rem" }}>
             <ControlledCarousel />
           </div>
-          
-          <div className='row  gap-5' style={{marginTop:"5.8rem", marginLeft:"5rem"}}>
+
+          <div className='row  gap-5' style={{ marginTop: "5.8rem", marginLeft: "5rem" }}>
             {viewProducts.map(product => (
-              <ProductCard key={product.id} handleAddCart={handleAddCart} product={product} setCartItem={setCartItem}  cartItem={cartItem} setCartSize={setCartSize} />
+              <ProductCard key={product.id} handleAddCart={handleAddCart} product={product} setCartItem={setCartItem} cartItem={cartItem} setCartSize={setCartSize} />
             ))}
           </div>
 
         </div>
       </div>
-      
+
     </React.Fragment>
   );
 };

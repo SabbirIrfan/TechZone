@@ -14,6 +14,7 @@ export const handleChange = (increaseItem, value, setCartItem,cartItem) => {
   
  export const handleRemove = (id,cartItem,setCartItem,setCartSize) => {
     const arr = cartItem.filter((item) => item.id !== id);
+    localStorage.setItem("cart",JSON.stringify(arr));
     setCartItem(arr);
     setCartSize(arr.length)
     // handlePrice(); 

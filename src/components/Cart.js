@@ -2,17 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap'; 
 import { handleChange, handleRemove, handlePrice } from './Functions';
-import { useCartItem, useSetCartItem } from './Xustand';
+import { useCartItem, useSetCartItem,useSetCartSize } from './Xustand';
 
 export const Cart = () => {
     const [price, setPrice] = useState(0);
     const location = useLocation();
     const cartItem = useCartItem();
     const setCartItem = useSetCartItem();
+    const setCartSize = useSetCartSize();
 
     useEffect(() => {
         handlePrice(cartItem, setPrice);
+        
+        
     }, [cartItem]);
+    useEffect(() => {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        setCartSize(cart.length);
+        setCartItem(cart);
+        
+    }, []);
 
     return ( 
         <Container  className='row ms-5 mr-5 mt-4' >
@@ -32,7 +41,7 @@ export const Cart = () => {
                                     <Button variant="success" onClick={() => handleChange(item, 1, setCartItem, cartItem)}>+</Button>
                                 </div>
                                 <span   className='lead pl-10'>Price of {item.amount} {item.catagory} is {item.price * item.amount}</span>
-                                <Button variant="danger" onClick={() => handleRemove(item.id, cartItem, setCartItem)}>Remove</Button>
+                                <Button variant="danger" onClick={() => handleRemove(item.id, cartItem, setCartItem,setCartSize)}>Remove</Button>
                             </div>
                         </div>
                     </Card.Body>
