@@ -8,14 +8,21 @@ import { ProductCard } from './ProductCard';
 import { Data } from '../data'
 import { Toast } from 'react-bootstrap';
 import { ControlledCarousel } from './Carousels';
+import { useStore } from './Xustand'
+import { useCartItem, useCartSize, useSetCartItem, useSetCartSize } from './Xustand';
+
 const Home = () => {
   // Dummy product data for demonstration
   const [products, setData] = useState(Data);
   const [viewProducts, setViewProducts] = useState(Data);
-  const [cartItem, setCartItem] = useState([]);
-  const [cartSize, setCartSize] = useState(0);
+  // const [cartItem, setCartItem] = useState([]);
+  const cartItem = useCartItem();
+  const cartSize = useCartSize();
+  const setCartItem = useSetCartItem();
+  const setCartSize = useSetCartSize();
 
-  const filterViewProducts = (catagory) => {
+
+   const filterViewProducts = (catagory) => {
     if (catagory === "book") {
       setViewProducts(
         products.filter(

@@ -2,31 +2,38 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './style.css'
 import { useNavigate } from "react-router-dom";
 import { Sidebar } from './Sidebar';
-import {Cartbar} from './Cartbar';
-export const NavScrollExample = ({ searchProducts, cartSize, cartItem ,filterViewProducts, setCartItem,setCartSize}) => {
-  const [price, setPrice] = useState(0);
+import { Cartbar } from './Cartbar';
+import { useStore } from './Xustand'
 
+export const NavScrollExample = ({ searchProducts, filterViewProducts }) => {
+  const [price, setPrice] = useState(0);
+  const cartItem = useStore((state) => state.cartItem);
+  const cartSize = useStore((state) => state.cartSize);
+  const setCartItem = useStore((state) => state.setCartItem);
+  const setCartSize = useStore((state)=> state.setCartSize);
   const navigate = useNavigate();
   const handleSearch = (e) => {
     searchProducts(e.target.value);
   };
 
   const handleCartNavigation = () => {
-    navigate(`/cart` ,  { state: { items : cartItem }});
+    navigate(`/cart`, { state: { items: cartItem } });
   }
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" style={{  position: "fixed",
+    <Navbar expand="lg" className="bg-body-tertiary" style={{
+      position: "fixed",
 
-      padding: "20px",    
+      padding: "20px",
       zIndex: "1000",
-      width:"100%"}}>
+      width: "100%"
+    }}>
       <Container fluid>
 
-        <Navbar.Brand  href="/">একের ভিতর সব</Navbar.Brand>
+        <Navbar.Brand href="/">একের ভিতর সব</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -35,8 +42,8 @@ export const NavScrollExample = ({ searchProducts, cartSize, cartItem ,filterVie
             navbarScroll
           >
 
-<div >  <Sidebar filterViewProducts={filterViewProducts} /></div>
-           
+            <div >  <Sidebar filterViewProducts={filterViewProducts} /></div>
+
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -58,7 +65,7 @@ export const NavScrollExample = ({ searchProducts, cartSize, cartItem ,filterVie
 
             </Button> */}
 
-            <Cartbar cartSize={cartSize} handleCartNavigation={handleCartNavigation} cartItem={cartItem} setPrice = {setPrice} setCartItem={setCartItem} setCartSize={setCartSize}  />
+            <Cartbar cartSize={cartSize} handleCartNavigation={handleCartNavigation} cartItem={cartItem} setPrice={setPrice} setCartItem={setCartItem} setCartSize={setCartSize} />
           </Form>
         </Navbar.Collapse>
       </Container>
