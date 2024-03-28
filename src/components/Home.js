@@ -9,11 +9,12 @@ import { Data } from '../data'
 import { Toast } from 'react-bootstrap';
 import { ControlledCarousel } from './Carousels';
 import { useStore } from './Xustand'
-import { useCartItem, useCartSize, useSetCartItem, useSetCartSize } from './Xustand';
+import {searchProducts} from './Functions';
+import { useCartItem, useCartSize, useSetCartItem, useSetCartSize ,useProducts} from './Xustand';
 
 const Home = () => {
   // Dummy product data for demonstration
-  const [products, setData] = useState(Data);
+  const products = useProducts();
   const [viewProducts, setViewProducts] = useState(Data);
   // const [cartItem, setCartItem] = useState([]);
   const cartItem = useCartItem();
@@ -66,23 +67,6 @@ const Home = () => {
         products
       )
     }
-  };
-
-
-  const searchProducts = (searchWith) => {
-    console.log(searchWith + searchWith.length);
-    let searchedNotes = products.filter(
-      (product) =>
-        product.title.toLowerCase().includes(searchWith.toLowerCase()) ||
-        product.desc.toLowerCase().includes(searchWith.toLowerCase()) ||
-        product.catagory.toLowerCase().includes(searchWith.toLowerCase())
-
-    );
-
-
-    if (searchWith.length === 0) {
-      setViewProducts(products);
-    } else setViewProducts(searchedNotes);
   };
 
 

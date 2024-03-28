@@ -1,1 +1,5 @@
+
+
 ##look at the startech and get idea about the sorting , price range , image and card description etc. 
+##infinity scrolling in the main page
+##mock payment gateway

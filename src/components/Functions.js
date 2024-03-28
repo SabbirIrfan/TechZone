@@ -27,3 +27,22 @@ export const handlePrice = (cartItem,setPrice) => {
     ))
     setPrice(ans);
 }
+
+
+export 
+
+const searchProducts = (searchWith,products,setViewProducts) => {
+  console.log(searchWith + searchWith.length);
+  let searchedNotes = products.filter(
+    (product) =>
+      product.title.toLowerCase().includes(searchWith.toLowerCase()) ||
+      product.desc.toLowerCase().includes(searchWith.toLowerCase()) ||
+      product.catagory.toLowerCase().includes(searchWith.toLowerCase())
+
+  );
+
+
+  if (searchWith.length === 0) {
+    setViewProducts(products);
+  } else setViewProducts(searchedNotes);
+};
