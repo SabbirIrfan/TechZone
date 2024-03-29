@@ -24,10 +24,10 @@ export const Cart = () => {
 
     return ( 
         <>
-        <div>
+
         <NavScrollExample ></NavScrollExample>
-        </div>
-        <Col  className='d-flex gap-5 ms-5 mr-5 mt-4' style={{marginTop:"40rem", maxHeight:"90vh",width:"90vw"}}>
+        <div className='row'>
+        <Col  className='d-flex gap-5 ms-5 mr-5' style={{marginTop:"5rem", maxHeight:"87vh",width:"95vw"}}>
             {/* Left Side - Display Cart Items */}
             <Col  xs={12} md={6} style={{ overflowY: 'auto', maxHeight: '90vh', minWidth:"50vw", marginLeft:"5vw" }}>
                 {cartItem?.map((item) => (
@@ -56,7 +56,7 @@ export const Cart = () => {
             </Col>
 
             {/* Right Side - User Info Form and Total Price */}
-            <Col xs={12} md={6} style={{ overflowY: 'auto', minHeight: 'auto', maxWidth:"30vw" }}>
+            <Col xs={12} md={6} style={{ marginTop:"5rem", overflowY: 'auto', minHeight: 'auto', maxWidth:"30vw" }}>
                 <Card className='mt-4'>
                     <Card.Body>
                         <Form>
@@ -81,14 +81,14 @@ export const Cart = () => {
                             </Form.Group>
 
                             <Button variant="primary" type="submit">
-                                Submit
+                                Proceed to payment
                             </Button>
                         </Form>
                     </Card.Body>
                 </Card>
 
                 {/* Total Price */}
-                <Card className='mt-4'>
+                <Card className='mt-4' >
                     <Card.Body>
                         <div className="d-flex justify-content-between">
                             <span>Total Price of your Cart</span>
@@ -98,6 +98,8 @@ export const Cart = () => {
                 </Card>
             </Col>
         </Col>
+        </div>
+
         </>
     );
 }

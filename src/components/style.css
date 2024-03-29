@@ -50,12 +50,17 @@
   width: calc(17vw - 2rem);
   /* Adjust the subtracted value to your preference */
 }
-
+.sidebar-catagory{
+  margin-right: 35vw;
+}
 
 @media screen and (max-width: 768px) {
   .my-sidebar {
     width: calc(100vw - 2rem);
     /* Adjust the subtracted value to your preference */
+  }
+  .sidebar-catagory{
+    margin-right: 0;
   }
 }
 

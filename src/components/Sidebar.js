@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, ListGroup , Offcanvas} from "react-bootstrap";
+import { Button, ListGroup , Navbar, Offcanvas} from "react-bootstrap";
 
 export const Sidebar = ({ filterViewProducts }) => {
   const [filterState, setFilterState] = useState("All");
@@ -17,9 +17,9 @@ export const Sidebar = ({ filterViewProducts }) => {
     <div>
  
 
-      <Button  variant="secondery" class="navbar-toggle" onClick={handleShow}>
-        Catagory
-      </Button> 
+      <button  aria-label="Toggle navigation"   onClick={handleShow}>
+      <span class="navbar-toggler-icon" > </span> Catagory
+      </button > 
 
       <Offcanvas show={show} onHide={handleClose} >
         <Offcanvas.Header closeButton>
