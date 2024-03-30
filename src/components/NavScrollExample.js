@@ -18,7 +18,7 @@ import {
   useSetViewProducts,
 } from "./Xustand";
 
-export const NavScrollExample = ({ filterViewProducts }) => {
+export const NavScrollExample = ({ filterViewProducts, showCatagory}) => {
   const [price, setPrice] = useState(0);
   const cartItem = useCartItem();
   const cartSize = useCartSize;
@@ -48,9 +48,11 @@ export const NavScrollExample = ({ filterViewProducts }) => {
       }}
     >
       <Container fluid>
+        { showCatagory &&
         <div className="sidebar-catagory">
           <Sidebar  filterViewProducts={filterViewProducts} />
         </div>
+  } 
         <Navbar.Brand href="/">TechZone</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -67,17 +69,7 @@ export const NavScrollExample = ({ filterViewProducts }) => {
               className="me-2"
               aria-label="Search"
             />
-            {/* <Button variant="outline-success" onClick={handleCartNavigation}>
-              <span>
-                <div className="cart-icon-container">
-                  {cartSize > 0 && <span className="badge">{cartSize}</span>}
-
-                  <FaCartPlus />
-                  
-                </div>
-              </span>
-
-            </Button> */}
+    
 
             <Cartbar
               cartSize={cartSize}
