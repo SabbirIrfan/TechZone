@@ -45,13 +45,7 @@ const ShowCartItem = ({ item, handleChange, handleRemove ,setCartItem,cartItem,s
           </Button>
           </div>
         </div>
-        <div className="mt-3">
-          <span>
-            Price of {item.amount} {item.catagory} is{' '}
-            {item.price * item.amount}
-          </span>
-        
-        </div>
+      
       </div>
     </Card.Body>
   </Card>
