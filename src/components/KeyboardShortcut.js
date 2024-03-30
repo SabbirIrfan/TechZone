@@ -20,7 +20,13 @@ export const MacRos = () => {
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <span>Alt + a :: Category Sidebar </span>
+          <br/>
+          <hr/>
           <span>Alt + c :: Cart Sidebar </span>
+          <br/>
+          <hr/>
+          <span>Alt + s :: Search Focus </span>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

@@ -51,13 +51,13 @@ export const Sidebar = ({ filterViewProducts }) => {
             >
               All Products
             </ListGroup.Item>
-            <ListGroup.Item
+            {/* <ListGroup.Item
               className="mb-2"
               style={{ cursor: "pointer" }}
               onClick={() => handleFilterStatus("book")}
             >
               Children's Books
-            </ListGroup.Item>
+            </ListGroup.Item> */}
             <ListGroup.Item
               className="mb-2"
               style={{ cursor: "pointer" }}
