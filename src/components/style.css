@@ -58,21 +58,30 @@
   position: fixed;
   padding-top: 4rem;
   z-index: 1000;
-  width: calc(17vw - 2rem);
+  width: calc(20vw - .4rem);
   /* Adjust the subtracted value to your preference */
 }
 .sidebar-catagory{
   margin-right: 35vw;
 }
+.rangeslider{
+  width: calc(15vw - .4rem);
+
+}
 
 @media screen and (max-width: 768px) {
   .my-sidebar {
-    width: calc(100vw - 2rem);
+    width: calc(40vw);
     /* Adjust the subtracted value to your preference */
   }
   .sidebar-catagory{
     margin-right: 0;
   }
+  .rangeslider{
+    width: calc(40vw - 1rem);
+  
+  }
+  
   
 }
 

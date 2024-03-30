@@ -1,14 +1,11 @@
 // Home.js
-import React, { useState,useEffect } from 'react';
-import { toast } from 'react-toastify';
+import React, {useEffect } from 'react';
+
 import { NavScrollExample } from './NavScrollExample'
-import { Sidebar } from './Sidebar';
-// import {PersistentDrawerLeft} from './SidebarMat'
+
 import { ProductCard } from './ProductCard';
-import { Data } from '../data'
-import { Toast } from 'react-bootstrap';
 import { ControlledCarousel } from './Carousels';
-import { useSetViewProducts, useStore, useViewProducts } from './Xustand'
+import { useSetViewProducts, useViewProducts } from './Xustand'
 import {searchProducts} from './Functions';
 import { useCartItem, useCartSize, useSetCartItem, useSetCartSize ,useProducts} from './Xustand';
 
@@ -17,7 +14,6 @@ const Home = () => {
   const products = useProducts();
   const viewProducts = useViewProducts();
   const setViewProducts = useSetViewProducts();
-  // const [cartItem, setCartItem] = useState([]);
   const cartItem = useCartItem();
   const cartSize = useCartSize();
   const setCartItem = useSetCartItem();
@@ -92,7 +88,6 @@ const Home = () => {
       <NavScrollExample showCatagory={true} searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} setCartSize={setCartSize} filterViewProducts={filterViewProducts} setCartItem={setCartItem} />
       <div className='row'>
 
-        {/* <div className='col-2 pt-5 mt-5' >  <Sidebar filterViewProducts={filterViewProducts} /></div> */}
         <div className="col-12">
           <div className='col-12' style={{ height: "25rem" }}>
             <ControlledCarousel />

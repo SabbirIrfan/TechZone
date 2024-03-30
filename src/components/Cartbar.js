@@ -32,7 +32,7 @@ export const Cartbar = ({ }) => {
 
 
 
-            <Button variant="" style={{ borderRadius: "60%", position: "relative", display: "inline-block" }} onClick={handleShow}>
+            <Button  id="cartbar" style={{ borderRadius: "60%", position: "relative", display: "inline-block" }} onClick={handleShow}>
                 <FaShoppingCart size={24} />
                 {cartSize > 0 && (
                     <span
@@ -63,7 +63,7 @@ export const Cartbar = ({ }) => {
                                 <Card.Title>{item.title}</Card.Title>
                                 <div className="d-flex align-items-end">
                                     <div className="cart_bar_img me-3">
-                                        <Card.Img style={{ height: "100px", borderRadius: "50%" }} src={item.img} />
+                                        <Card.Img style={{ height: "100px"  , width:"100px", borderRadius: "30%%" }} src={item.img} />
                                     </div>
                                     <div>
 

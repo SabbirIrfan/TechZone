@@ -1,20 +1,18 @@
-import { Radio } from '@mui/material';
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { Radio } from "@mui/material";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { KeyShortcut } from './KeyboardShortcut';
 
-
-export const FormModal = () => {
+export const MacRos = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Forward to Payment
+      <Button id="macros" variant="primary" onClick={handleShow}>
+        MacRos
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -22,9 +20,8 @@ export const FormModal = () => {
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        
-
-          </Modal.Body>
+          <span>Alt + c :: Cart Sidebar </span>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

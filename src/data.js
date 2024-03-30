@@ -5,6 +5,8 @@ export const Data = [
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ligula ac justo commodo sodales. Sed sit amet aliquet ex, et eleifend justo.`,
     img: "https://vibegaming.com.bd/wp-content/uploads/2023/12/70a8e4d8eafd821987b3945050d5b48f.webp",
     amount:1,
+    price: 450,
+
     catagory: "keyboard",
     rating: 5
   },
@@ -14,6 +16,8 @@ export const Data = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ligula ac justo commodo sodales. Sed sit amet aliquet ex, et eleifend justo.",
     img: "https://m.media-amazon.com/images/I/71XQ+eLtgTL._AC_SX522_.jpg",
     amount:1,
+    price: 5,
+
     catagory: "keyboard",
     rating: 5
   },
@@ -23,6 +27,8 @@ export const Data = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ligula ac justo commodo sodales. Sed sit amet aliquet ex, et eleifend justo.",
     img: "https://vibegaming.com.bd/wp-content/uploads/2023/12/63e040d04fd3be341f4ce1d2c095f2e2.webp",
     amount:1,
+    price: 450,
+
     catagory: "keyboard",
     rating: 5
   },
@@ -32,6 +38,8 @@ export const Data = [
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ligula ac justo commodo sodales. Sed sit amet aliquet ex, et eleifend justo.",
     img: "https://vibegaming.com.bd/wp-content/uploads/2024/02/Untitled-design-27.png",
     amount:1,
+    price: 450,
+
     catagory: "keyboard",
     rating: 5
   }, {
@@ -95,7 +103,7 @@ export const Data = [
     id: 16,
     title: "Grandma's Bag of Stories",
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ligula ac justo commodo sodales. Sed sit amet aliquet ex, et eleifend justo.`,
-    price: 157,
+    price: 10,
     img: "https://m.media-amazon.com/images/I/71fPuKH1r5L._AC_UY218_.jpg",
     amount:1,
     catagory: "laptop",
@@ -175,7 +183,7 @@ export const Data = [
     id: 38,
     title: "HP VH240a 23.8 Inch Monitor",
     desc: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ligula ac justo commodo sodales. Sed sit amet aliquet ex, et eleifend justo.`,
-    price: 124,
+    price: 15,
     img: "https://images.unsplash.com/photo-1561277523-36e73c51a37a",
     amount: 1,
     catagory: "monitor",
