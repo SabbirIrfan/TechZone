@@ -66,7 +66,7 @@ export const Cart = () => {
                     placeholder="Enter your phone number"
                   />
                 </Form.Group>
-                <FormModal />
+                <FormModal cartItem={cartItem} setCartItem={setCartItem}/>
               </Form>
             </Card.Body>
           </Card>
