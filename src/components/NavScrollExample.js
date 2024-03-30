@@ -29,7 +29,8 @@ export const NavScrollExample = ({ filterViewProducts, showCatagory}) => {
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
-    searchProducts(e.target.value, products, setViewProducts);
+   setViewProducts( searchProducts(e.target.value, products, setViewProducts));
+   
   };
 
   const handleCartNavigation = () => {

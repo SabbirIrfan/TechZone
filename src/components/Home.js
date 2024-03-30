@@ -8,14 +8,15 @@ import { ProductCard } from './ProductCard';
 import { Data } from '../data'
 import { Toast } from 'react-bootstrap';
 import { ControlledCarousel } from './Carousels';
-import { useStore } from './Xustand'
+import { useSetViewProducts, useStore, useViewProducts } from './Xustand'
 import {searchProducts} from './Functions';
 import { useCartItem, useCartSize, useSetCartItem, useSetCartSize ,useProducts} from './Xustand';
 
 const Home = () => {
   // Dummy product data for demonstration
   const products = useProducts();
-  const [viewProducts, setViewProducts] = useState(Data);
+  const viewProducts = useViewProducts();
+  const setViewProducts = useSetViewProducts();
   // const [cartItem, setCartItem] = useState([]);
   const cartItem = useCartItem();
   const cartSize = useCartSize();
