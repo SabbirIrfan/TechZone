@@ -14,11 +14,15 @@ export const handleChange = (increaseItem, value, setCartItem, cartItem) => {
 };
 
 export const handleRemove = (id, cartItem, setCartItem, setCartSize) => {
-  const arr = cartItem.filter((item) => item.id !== id);
-  localStorage.setItem("cart", JSON.stringify(arr));
-  setCartItem(arr);
-  setCartSize(arr.length);
-  // handlePrice();
+  const isConfirmed = window.confirm("Are you sure you want to remove this item from your cart?");
+  if (isConfirmed) {
+    const arr = cartItem.filter((item) => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(arr));
+    setCartItem(arr);
+    setCartSize(arr.length);
+    // handlePrice();
+  }
+ 
 };
 
 export const handlePrice = (cartItem, setPrice) => {
