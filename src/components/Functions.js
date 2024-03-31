@@ -9,7 +9,7 @@ export const handleChange = (increaseItem, value, setCartItem, cartItem) => {
     }
     return item; // Return the modified item
   });
-
+  localStorage.setItem("cart", JSON.stringify(newCartItem));
   setCartItem(newCartItem);
 };
 
@@ -36,7 +36,7 @@ export const searchProducts = (searchWith, products) => {
   let searchedProducts = products.filter(
     (product) =>
       product.title.toLowerCase().includes(searchWith.toLowerCase()) ||
-      product.catagory.toLowerCase().includes(searchWith.toLowerCase())
+      product.category.toLowerCase().includes(searchWith.toLowerCase())
   );
 
   if (searchWith.length === 0) {

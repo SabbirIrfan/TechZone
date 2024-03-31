@@ -7,7 +7,7 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 import { Cartbar } from "./Cartbar";
-import { useStore } from "./Xustand";
+import { useStore, useViewProducts } from "./Xustand";
 import { searchProducts } from "./Functions";
 import { MacRos } from "./KeyboardShortcut";
 import {
@@ -27,6 +27,7 @@ export const NavScrollExample = ({ filterViewProducts, showCatagory }) => {
   const setViewProducts = useSetViewProducts();
   const setCartItem = useSetCartItem();
   const setCartSize = useSetCartSize();
+  const viewProducts = useViewProducts();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -79,7 +80,7 @@ export const NavScrollExample = ({ filterViewProducts, showCatagory }) => {
             <Sidebar filterViewProducts={filterViewProducts} />
           </div>
         )}
-        <Navbar.Brand href="/">TechZone</Navbar.Brand>
+        <Navbar.Brand href="/"><img style={{height:"40px", width:"40px", borderRadius:"20%" , marginRight:"1rem"}} src='https://i.postimg.cc/qBnjD335/techZone.png' border='0' alt='techZone'/>TechZone </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

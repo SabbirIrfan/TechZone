@@ -5,12 +5,10 @@ import { NavScrollExample } from './NavScrollExample'
 
 import { ProductCard } from './ProductCard';
 import { ControlledCarousel } from './Carousels';
-import { useSetViewProducts, useViewProducts } from './Xustand'
 import {searchProducts} from './Functions';
-import { useCartItem, useCartSize, useSetCartItem, useSetCartSize ,useProducts} from './Xustand';
+import { useCartItem, useCartSize, useSetCartItem, useSetCartSize ,useProducts,useViewProducts,useSetViewProducts} from './Xustand';
 
 const Home = () => {
-  // Dummy product data for demonstration
   const products = useProducts();
   const viewProducts = useViewProducts();
   const setViewProducts = useSetViewProducts();
@@ -21,45 +19,44 @@ const Home = () => {
   useEffect(() => {
     if(!localStorage.getItem("cart")) localStorage.setItem("cart",JSON.stringify([]));
     let x = localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")) : [];
-    
     setCartItem(x)
     setCartSize(x.length)
   }, []);
 
-  const filterViewProducts = (catagory) => {
-    if (catagory === "book") {
+  const filterViewProducts = (category) => {
+    if (category === "book") {
       setViewProducts(
         products.filter(
-          (viewProducts) => viewProducts.catagory === "book"
+          (viewProducts) => viewProducts.category === "book"
         )
       )
       console.log(viewProducts);
-    } else if (catagory === "laptop") {
+    } else if (category === "laptop") {
       setViewProducts(
         products.filter(
-          (viewProducts) => viewProducts.catagory === "laptop"
+          (viewProducts) => viewProducts.category === "laptop"
         )
       )
-    } else if (catagory === "keyboard") {
+    } else if (category === "keyboard") {
       setViewProducts(
         products.filter(
-          (viewProducts) => viewProducts.catagory === "keyboard"
+          (viewProducts) => viewProducts.category === "keyboard"
         )
       )
-    } else if (catagory === "mouse") {
+    } else if (category === "mouse") {
       setViewProducts(
         products.filter(
-          (viewProducts) => viewProducts.catagory === "mouse"
+          (viewProducts) => viewProducts.category === "mouse"
         )
       )
     }
-    else if (catagory === "monitor") {
+    else if (category === "monitor") {
       setViewProducts(
         products.filter(
-          (viewProducts) => viewProducts.catagory === "monitor"
+          (viewProducts) => viewProducts.category === "monitor"
         )
       )
-    } else if (catagory === "all") {
+    } else if (category === "all") {
       setViewProducts(
         products
       )
