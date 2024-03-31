@@ -1,27 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { Button, ListGroup , Navbar, Offcanvas} from "react-bootstrap";
-import RangeSlider from 'react-bootstrap-range-slider';
-import {useViewProducts,useSetViewProducts, useProducts, useCategory, useSetCategory} from './Xustand'
+import {
+  Button,
+  Dropdown,
+  ListGroup,
+  ListGroupItem,
+  Navbar,
+  Offcanvas,
+} from "react-bootstrap";
+import RangeSlider from "react-bootstrap-range-slider";
+import {
+  useViewProducts,
+  useSetViewProducts,
+  useProducts,
+  useCategory,
+  useSetCategory,
+} from "./Xustand";
 export const Sidebar = ({ filterViewProducts }) => {
   const [filterState, setFilterState] = useState("all");
   const [show, setShow] = useState(false);
   const [priceRange, setPriceRange] = useState(1000); // Initial price range values
-  const category = useCategory();
-  const setCategory = useSetCategory();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const products = useProducts();
   const setViewProducts = useSetViewProducts();
 
-  useEffect(()=>{
+  useEffect(() => {
     handleViewProductChange();
-
-  },[priceRange])
+  }, [priceRange]);
   const handleFilterStatus = (category) => {
     filterViewProducts(category);
     setFilterState(category);
   };
-
 
   const handlePriceRangeChange = (event) => {
     setPriceRange([event.target.value]);
@@ -29,21 +38,38 @@ export const Sidebar = ({ filterViewProducts }) => {
 
   const handleViewProductChange = () => {
     const filteredProducts = products.filter((product) => {
-      if(filterState === 'all'){
-      return product.price <= priceRange ;
-      }else{
+      if (filterState === "all") {
+        return product.price <= priceRange;
+      } else {
         return product.price <= priceRange && product.category === filterState;
       }
     });
-    
-    console.log(priceRange)
+
     // Update the filtered products in state
     setViewProducts(filteredProducts);
   };
 
- const handleInputPriceRange = (e)=>{
-    setPriceRange([e.target.value])
-  }
+  const handleInputPriceRange = (e) => {
+    setPriceRange([e.target.value]);
+  };
+
+  // const sortProducts = (category,sortBy)=>{
+  //   let filteredProducts;
+  //   if (category === "all") {
+  //     filteredProducts = products;
+  //   } else {
+  //     filteredProducts = products.filter((product) => product.category === category);
+  //   }
+  
+  //   if (sortBy === "priceLowToHigh") {
+
+  //     filteredProducts.sort((a, b) => a.price - b.price);
+  //   } else if (sortBy === "priceHighToLow") {
+  //     filteredProducts.sort((a, b) => b.price - a.price);
+  //   }
+  // console.log(filteredProducts)
+  //   setViewProducts(filteredProducts);
+  // }
   return (
     <div>
       <Button id="category" aria-label="Toggle navigation" onClick={handleShow}>
@@ -63,7 +89,7 @@ export const Sidebar = ({ filterViewProducts }) => {
             >
               All Products
             </ListGroup.Item>
-           
+
             <ListGroup.Item
               className="mb-2"
               style={{ cursor: "pointer" }}
@@ -94,17 +120,40 @@ export const Sidebar = ({ filterViewProducts }) => {
             </ListGroup.Item>
             <ListGroup.Item>
               <RangeSlider
-              className="rangeslider"
+                className="rangeslider"
                 value={priceRange}
                 onChange={handlePriceRangeChange}
                 min={2}
                 max={10000}
                 step={5}
-              >
-                
-              </RangeSlider>
-              <div >Price Range:  <input style={{width:"5rem"}}  onChange={handleInputPriceRange} value={priceRange}/></div>
+              ></RangeSlider>
+              <div>
+                Price Range:{" "}
+                <input
+                  style={{ width: "5rem" }}
+                  onChange={handleInputPriceRange}
+                  value={priceRange}
+                />
+              </div>
             </ListGroup.Item>
+            {/* <ListGroupItem>
+              <Dropdown >
+                <Dropdown.Item>
+                <button
+                  onClick={() => sortProducts(filterState, "priceLowToHigh")}
+                >
+                  Sort by Price (Low to High)
+                </button>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                <button
+                  onClick={() => sortProducts(filterState, "priceHighToLow")}
+                >
+                  Sort by Price (High to Low)
+                </button>
+                </Dropdown.Item>
+              </Dropdown>
+            </ListGroupItem> */}
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>
