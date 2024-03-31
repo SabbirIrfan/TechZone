@@ -35,7 +35,7 @@ const navigate = useNavigate();
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Lets Buy Some Mre
+            Lets Buy Some More
           </Button>
         </Modal.Footer>
       </Modal>
