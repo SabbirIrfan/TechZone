@@ -21,7 +21,7 @@ const Home = () => {
     let x = localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")) : [];
     setCartItem(x)
     setCartSize(x.length)
-  }, []);
+  });
 
   const filterViewProducts = (category) => {
     if (category === "book") {

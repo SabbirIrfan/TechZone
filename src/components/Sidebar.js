@@ -6,16 +6,12 @@ import {
   Button,
   ListGroup,
   ListGroupItem,
-  Navbar,
   Offcanvas,
 } from "react-bootstrap";
 import RangeSlider from "react-bootstrap-range-slider";
 import {
-  useViewProducts,
   useSetViewProducts,
   useProducts,
-  useCategory,
-  useSetCategory,
 } from "./Xustand";
 export const Sidebar = ({ filterViewProducts }) => {
   const [filterState, setFilterState] = useState("all");

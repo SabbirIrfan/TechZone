@@ -7,7 +7,6 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 import { Cartbar } from "./Cartbar";
-import { useStore, useViewProducts } from "./Xustand";
 import { searchProducts } from "./Functions";
 import { MacRos } from "./KeyboardShortcut";
 import {
@@ -20,14 +19,14 @@ import {
 } from "./Xustand";
 
 export const NavScrollExample = ({ filterViewProducts, showCatagory }) => {
-  const [price, setPrice] = useState(0);
+  const [ setPrice] = useState(0);
   const cartItem = useCartItem();
   const cartSize = useCartSize;
   const products = useProducts();
   const setViewProducts = useSetViewProducts();
   const setCartItem = useSetCartItem();
   const setCartSize = useSetCartSize();
-  const viewProducts = useViewProducts();
+  
   const navigate = useNavigate();
 
   useEffect(() => {
