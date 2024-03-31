@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+
 import {
-  Button,
   Dropdown,
+  DropdownButton,
+  Button,
   ListGroup,
   ListGroupItem,
   Navbar,
@@ -53,27 +55,29 @@ export const Sidebar = ({ filterViewProducts }) => {
     setPriceRange([e.target.value]);
   };
 
-  // const sortProducts = (category,sortBy)=>{
-  //   let filteredProducts;
-  //   if (category === "all") {
-  //     filteredProducts = products;
-  //   } else {
-  //     filteredProducts = products.filter((product) => product.category === category);
-  //   }
-  
-  //   if (sortBy === "priceLowToHigh") {
+  const sortProducts = (category, sortBy) => {
+    let filteredProducts;
+    if (category === "all") {
+      filteredProducts = [...products];
+      console.log(filteredProducts)
 
-  //     filteredProducts.sort((a, b) => a.price - b.price);
-  //   } else if (sortBy === "priceHighToLow") {
-  //     filteredProducts.sort((a, b) => b.price - a.price);
-  //   }
-  // console.log(filteredProducts)
-  //   setViewProducts(filteredProducts);
-  // }
+    } else {
+      filteredProducts = products.filter((product) => product.category === category);
+    }
+
+    if (sortBy === "priceLowToHigh") {
+      const flag = filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (sortBy === "priceHighToLow") {
+      filteredProducts.sort((a, b) => b.price - a.price);
+    }
+    console.log("after sorting...................")
+    console.log(filteredProducts)
+    setViewProducts(filteredProducts);
+  }
   return (
     <div>
       <Button id="category" aria-label="Toggle navigation" onClick={handleShow}>
-        <span class="navbar-toggler-icon"> </span> Catagory
+        <span class="navbar-toggler-icon " > </span> Catagory
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
@@ -136,24 +140,20 @@ export const Sidebar = ({ filterViewProducts }) => {
                 />
               </div>
             </ListGroup.Item>
-            {/* <ListGroupItem>
-              <Dropdown >
+            <ListGroupItem>
+              <DropdownButton id="dropdown-basic-button" title="Sort Products">
                 <Dropdown.Item>
-                <button
-                  onClick={() => sortProducts(filterState, "priceLowToHigh")}
-                >
-                  Sort by Price (Low to High)
-                </button>
+                  <Button onClick={() => sortProducts(filterState, "priceLowToHigh")}>
+                    Sort by Price (Low to High)
+                  </Button>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                <button
-                  onClick={() => sortProducts(filterState, "priceHighToLow")}
-                >
-                  Sort by Price (High to Low)
-                </button>
+                  <Button onClick={() => sortProducts(filterState, "priceHighToLow")}>
+                    Sort by Price (High to Low)
+                  </Button>
                 </Dropdown.Item>
-              </Dropdown>
-            </ListGroupItem> */}
+              </DropdownButton>
+            </ListGroupItem>
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>
