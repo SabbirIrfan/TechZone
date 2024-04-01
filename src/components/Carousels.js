@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import {CarouselImage} from './CarouselImage';
-
+import {carouselImage} from '../data/images/carouselImage';
+import { Image } from 'react-bootstrap'
 export const ControlledCarousel = () => {
   const [index, setIndex] = useState(0);
 
@@ -9,22 +9,17 @@ export const ControlledCarousel = () => {
     setIndex(selectedIndex);
   };
 
+  const images = [...carouselImage]
   return (
     <Carousel fluid activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <CarouselImage imageNo={1} text="First slide" />
-       
+    {images.map((image) => (
+      <Carousel.Item >
+        <div className='container'>
+        <Image src={image.image} className='my-carousel-image img' fluid style={{ width: "100%" }} />
+        </div>
       </Carousel.Item>
-      <Carousel.Item>
-        <CarouselImage imageNo={2} text="Second slide" />
-      
-      </Carousel.Item>
-      <Carousel.Item>
-        <CarouselImage imageNo={3} text="Third slide" />
-        
-      </Carousel.Item>
-   
-    </Carousel>
+    ))}
+  </Carousel>
   );
 }
 

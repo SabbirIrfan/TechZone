@@ -6,7 +6,6 @@ export const Data = [
     img :'https://vibegaming.com.bd/wp-content/uploads/2022/07/1-1.png',
     amount:1,
     price: 450,
-
     category: "keyboard",
     rating: 5
   },
