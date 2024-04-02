@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { ProductModal } from './ProductModal';
-import {renderRatingStars} from './Functions'
+import {renderRatingStars} from '../Functions'
 export const ProductCard = ({ product, handleAddCart }) => {
   const [show, setShow] = useState(false);
 

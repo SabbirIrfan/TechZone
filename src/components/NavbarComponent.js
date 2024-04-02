@@ -5,8 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 import React, { useState , useEffect} from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-import { Sidebar } from "./Sidebar";
-import { Cartbar } from "./Cartbar";
+import { Sidebar } from "./product/Sidebar";
+import { Cartbar } from "./cart/Cartbar";
 import { searchProducts } from "./Functions";
 import { MacRos } from "./KeyboardShortcut";
 import {
@@ -16,9 +16,9 @@ import {
   useSetCartSize,
   useProducts,
   useSetViewProducts,
-} from "./Xustand";
+} from "./store/Xustand";
 
-export const NavScrollExample = ({ filterViewProducts, showCatagory }) => {
+export const NavbarComponent = ({ filterViewProducts, showCatagory }) => {
   const [ setPrice] = useState(0);
   const cartItem = useCartItem();
   const cartSize = useCartSize;

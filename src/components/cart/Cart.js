@@ -1,16 +1,14 @@
-import React, { useState,useRef, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { Card, Button, Container, Form, Col } from "react-bootstrap";
-import { handleChange, handleRemove, handlePrice } from "./Functions";
-import { useCartItem, useSetCartItem, useSetCartSize } from "./Xustand";
-import { NavScrollExample } from "./NavScrollExample";
-import { FormModal } from "./Modal";
+import React, { useState, useEffect } from "react";
+import { Card, Container, Form } from "react-bootstrap";
+import { handleChange, handleRemove, handlePrice } from "../Functions";
+import { useCartItem, useSetCartItem, useSetCartSize } from "../store/Xustand";
+import { NavbarComponent } from "../NavbarComponent";
+
 import {InvoiceModal} from "./InvoiceModal"
 import CartItem from "./CartItem"
 
 export const Cart = () => {
   const [price, setPrice] = useState(0);
-  const location = useLocation("");
   const cartItem = useCartItem("");
   const setCartItem = useSetCartItem("");
   const setCartSize = useSetCartSize("");
@@ -38,7 +36,7 @@ export const Cart = () => {
   return (
     <>
       <Container fluid>
-        <NavScrollExample showCatagorycatagory={false}></NavScrollExample>
+        <NavbarComponent showCatagorycatagory={false}></NavbarComponent>
       </Container>
       <Container fluid className="row" style={{ paddingTop: "5rem" }}>
 

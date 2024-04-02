@@ -1,12 +1,12 @@
 // Home.js
 import React, {useEffect } from 'react';
 
-import { NavScrollExample } from './NavScrollExample'
+import { NavbarComponent } from './NavbarComponent'
 
-import { ProductCard } from './ProductCard';
+import { ProductCard } from './product/ProductCard';
 import { ControlledCarousel } from './Carousels';
 import {searchProducts} from './Functions';
-import { useCartItem, useCartSize, useSetCartItem, useSetCartSize ,useProducts,useViewProducts,useSetViewProducts} from './Xustand';
+import { useCartItem, useCartSize, useSetCartItem, useSetCartSize ,useProducts,useViewProducts,useSetViewProducts} from './store/Xustand';
 
 const Home = () => {
   const products = useProducts();
@@ -82,7 +82,7 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <NavScrollExample showCatagory={true} searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} setCartSize={setCartSize} filterViewProducts={filterViewProducts} setCartItem={setCartItem} />
+      <NavbarComponent showCatagory={true} searchProducts={searchProducts} cartSize={cartSize} cartItem={cartItem} setCartSize={setCartSize} filterViewProducts={filterViewProducts} setCartItem={setCartItem} />
       <div className='row'>
 
         <div className="col-12">

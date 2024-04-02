@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
 import { PDFViewer } from '@react-pdf/renderer';
 import Invoice from './invoice';
-import { FormModal } from "./Modal";
+import { FormModal } from "../Modal";
 export const InvoiceModal = ({ cartItem, setCartItem, orderForm }) => {
 
     const [show, setShow] = useState(false);

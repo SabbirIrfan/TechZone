@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Data } from "../data";
+import { Data } from "../../data";
 export const useStore = create((set) => ({
   viewProducts: Data,
   products: Data,

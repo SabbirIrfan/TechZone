@@ -1,8 +1,6 @@
-import { Radio } from "@mui/material";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 export const MacRos = () => {
   const [show, setShow] = useState(false);

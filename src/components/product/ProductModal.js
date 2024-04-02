@@ -1,14 +1,13 @@
-import { Radio } from '@mui/material';
-import { useState } from 'react';
-import {Button, Modal, NavDropdown, Card} from 'react-bootstrap';
-import {renderRatingStars} from './Functions'
+
+import {Button, Modal, Card} from 'react-bootstrap';
+import {renderRatingStars} from '../Functions'
 
 
 export const ProductModal = ({show,setShow,handleAddCart, product}) => {
   
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
   return (
     <>
      

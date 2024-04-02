@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Button, ListGroup, Offcanvas, Card, Container } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
-import { handleChange, handleRemove, handlePrice } from "./Functions";
+import { handleChange, handleRemove, handlePrice } from "../Functions";
 import { useNavigate } from "react-router-dom";
 import {
   useCartItem,
   useCartSize,
   useSetCartItem,
   useSetCartSize,
-} from "./Xustand";
+} from "../store/Xustand";
 
 export const Cartbar = ({}) => {
   const [show, setShow] = useState(false);
