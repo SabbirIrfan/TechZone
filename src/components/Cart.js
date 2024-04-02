@@ -95,9 +95,7 @@ export const Cart = () => {
             </Card.Body>
           </Card>
         </div>
-        <FormModal cartItem={cartItem} setCartItem={setCartItem} />
 
-        {/* <button onClick={downloadPDF}>Download PDF</button> */}
       </Container>
     </>
   );
