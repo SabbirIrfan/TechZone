@@ -11,9 +11,9 @@ export const InvoiceModal = ({ cartItem, setCartItem, orderForm }) => {
     const navigate = useNavigate();
     const handleClose = () => {
         setShow(false);
-        // navigate('/');
-        // cartItem = [];
-        // setCartItem([]);
+        navigate('/');
+        cartItem = [];
+        setCartItem([]);
         localStorage.setItem("cart", JSON.stringify([]));
 
 

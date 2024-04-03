@@ -88,7 +88,7 @@ export const Cart = () => {
             <Card.Body>
               <div className="d-flex justify-content-between">
                 <span>Total Price of your Cart</span>
-                <span>$ - {price}</span>
+                <span>$ ::  {price}</span>
               </div>
             </Card.Body>
           </Card>

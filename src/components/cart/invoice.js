@@ -12,13 +12,11 @@ const Invoice = ({ cartItems, orderForm }) => {
         <View style={styles.container}>
           <Text style={styles.header}>Invoice</Text>
           <Text style={styles.transactionNumber}>Transaction Number: {transactionNumber}</Text>
-          <View style={styles.companyInfo}>
+          <View >
             <Text style={styles.companyName}>{orderForm.name}</Text>
-            <Text>{orderForm.address}</Text>
-            <Text>{orderForm.phoneNumber}</Text>
-            <Text>{orderForm.email}</Text>
+
           </View>
-          <View style={styles.invoiceDetails}>
+          <View >
             <Text style={styles.invoiceTitle}>Invoice Details</Text>
             <View style={styles.table}>
               <View style={styles.tableHeader}>
